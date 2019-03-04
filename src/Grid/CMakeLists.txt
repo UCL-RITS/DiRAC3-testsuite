@@ -10,6 +10,7 @@ ExternalProject_Add(grid-benchmark
     && automake -f --add-missing
     && autoconf -f
 		&& sed -i "s/prerequisites lib benchmarks tests/prerequisites lib benchmarks/g" Makefile.am
+		&& sed -i "s|Config.h||g" lib/Makefile.am
 		&& mkdir -p builds/dirac3testsuite
 		&& cd builds/dirac3testsuite
 		&& CXX=${CMAKE_CXX_COMPILER} CC=${CMAKE_C_COMPILER} ../../configure --enable-precision=single --enable-simd=AVX "CXXFLAGS=${OpenMP_CXX_FLAGS} -mavx -O3 -std=c++11" "LIBS=${OpenMP_CXX_FLAGS} -lgmp -lmpfr" --enable-comms=mpi --prefix=${CMAKE_SOURCE_DIR}
