@@ -2,7 +2,7 @@
 ExternalProject_Add(grid-benchmark
   DOWNLOAD_DIR ${CMAKE_BINARY_DIR}
   GIT_REPOSITORY https://github.com/paboyle/Grid.git
-  GIT_TAG develop
+  GIT_TAG df6c9f55d1af1c40607087f241c2a98edf021075
   SOURCE_DIR ${CMAKE_BINARY_DIR}/grid-benchmark
   BUILD_IN_SOURCE 1
 	CONFIGURE_COMMAND aclocal -I m4
