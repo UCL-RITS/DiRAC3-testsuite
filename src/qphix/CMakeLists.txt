@@ -37,6 +37,9 @@ ExternalProject_Add(qphix-benchmark
   BUILD_IN_SOURCE 1
   CONFIGURE_COMMAND autoreconf &&
     sed -i "s/check_PROGRAMS += test_blas//g" tests/Makefile.am &&
+    sed -i "s|#undef SEEK_SET||g" include/qphix/comm.h &&
+    sed -i "s|#undef SEEK_CUR||g" include/qphix/comm.h &&
+    sed -i "s|#undef SEEK_END||g" include/qphix/comm.h &&
     CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER} ./configure
     "CXXFLAGS=${QPHIX_CXX_FLAGS}" "CFLAGS=${QPHIX_C_FLAGS}"
     --enable-parallel-arch=parscalar --enable-soalen=8 --enable-proc=AVX --enable-openmp
