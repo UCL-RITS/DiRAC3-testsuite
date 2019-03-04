@@ -1,7 +1,7 @@
 # Build Grid Benchmark
 ExternalProject_Add(grid-benchmark
   DOWNLOAD_DIR ${CMAKE_BINARY_DIR}
-  GIT_REPOSITORY git@github.com:paboyle/Grid
+  GIT_REPOSITORY https://github.com/paboyle/Grid.git
   GIT_TAG develop
   SOURCE_DIR ${CMAKE_BINARY_DIR}/grid-benchmark
   BUILD_IN_SOURCE 1
