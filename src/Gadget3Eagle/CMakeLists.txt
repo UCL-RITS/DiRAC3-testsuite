@@ -1,7 +1,7 @@
 # Build Gadget Benchmark
 ExternalProject_Add(gadget-benchmark
   DOWNLOAD_DIR ${CMAKE_BINARY_DIR}
-  GIT_REPOSITORY https://github.com/DiRAC-benchmarks/Gadget3EagleBench.git
+  GIT_REPOSITORY git@github.com:DiRAC-benchmarks/Gadget3EagleBench.git
   GIT_TAG benchmark
   SOURCE_DIR ${CMAKE_BINARY_DIR}/gadget-benchmark
   BUILD_IN_SOURCE 1

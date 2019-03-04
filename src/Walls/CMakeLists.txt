@@ -1,7 +1,7 @@
 # Build Walls Benchmark
 ExternalProject_Add(walls-benchmark
   DOWNLOAD_DIR ${CMAKE_BINARY_DIR}
-  GIT_REPOSITORY https://github.com/DiRAC-benchmarks/Walls-benchmark.git
+  GIT_REPOSITORY git@github.com:DiRAC-benchmarks/Walls-benchmark.git
   GIT_TAG master
   SOURCE_DIR ${CMAKE_BINARY_DIR}/walls-benchmark
   BUILD_IN_SOURCE 1
