@@ -6,7 +6,7 @@
 
 * [Grid](https://github.com/paboyle/Grid/) - Lattice quantum chromodynamics
 * [MILCmk](https://asc.llnl.gov/CORAL-benchmarks/) - Lattice quantum chromodynamics
-* [QPhiX](https://jeffersonlab.github.io/qphix/) - Lattice quantum chromodynamics
+* [QPhiX](https://jeffersonlab.github.io/qphix/) - Lattice quantum chromodynamics - This can be a pain to build, disable with `-DDISABLE_QPHIX=TRUE` on `cmake` line.
 
 ### Memory-Intensive
 
