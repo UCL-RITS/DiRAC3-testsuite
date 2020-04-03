@@ -1,7 +1,7 @@
 # QMP Library
 ExternalProject_Add(qmp-library
   DOWNLOAD_DIR ${CMAKE_BINARY_DIR}
-  GIT_REPOSITORY git@github.com:DiRAC-benchmarks/qmp.git
+  GIT_REPOSITORY https://github.com/DiRAC-benchmarks/qmp.git
   GIT_TAG master
   SOURCE_DIR ${CMAKE_BINARY_DIR}/qmp-library
   BUILD_IN_SOURCE 1
@@ -31,12 +31,15 @@ endif (CMAKE_CXX_COMPILER_ID MATCHES "GNU")
 ExternalProject_Add(qphix-benchmark
   DEPENDS qmp-library
   DOWNLOAD_DIR ${CMAKE_BINARY_DIR}
-  GIT_REPOSITORY git@github.com:DiRAC-benchmarks/qphix.git
+  GIT_REPOSITORY https://github.com/DiRAC-benchmarks/qphix.git
   GIT_TAG dirac3-benchmark
   SOURCE_DIR ${CMAKE_BINARY_DIR}/qphix-benchmark
   BUILD_IN_SOURCE 1
   CONFIGURE_COMMAND autoreconf &&
     sed -i "s/check_PROGRAMS += test_blas//g" tests/Makefile.am &&
+    sed -i "s|#undef SEEK_SET||g" include/qphix/comm.h &&
+    sed -i "s|#undef SEEK_CUR||g" include/qphix/comm.h &&
+    sed -i "s|#undef SEEK_END||g" include/qphix/comm.h &&
     CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER} ./configure
     "CXXFLAGS=${QPHIX_CXX_FLAGS}" "CFLAGS=${QPHIX_C_FLAGS}"
     --enable-parallel-arch=parscalar --enable-soalen=8 --enable-proc=AVX --enable-openmp
