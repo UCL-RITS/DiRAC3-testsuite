@@ -1,7 +1,7 @@
 # Compilers
-set(CMAKE_C_COMPILER       /shared/ucl/apps/intel/2018.Update3/compilers_and_libraries_2018.3.222/linux/bin/intel64/icc)
-set(CMAKE_CXX_COMPILER     /shared/ucl/apps/intel/2018.Update3/compilers_and_libraries_2018.3.222/linux/bin/intel64/icc)
-set(CMAKE_Fortran_COMPILER /shared/ucl/apps/intel/2018.Update3/compilers_and_libraries_2018.3.222/linux/bin/intel64/ifort)
+set(CMAKE_C_COMPILER       mpicc)
+set(CMAKE_CXX_COMPILER     mpicxx)
+set(CMAKE_Fortran_COMPILER mpifc)
 
 # Hardware Specification
 set(DIRAC3_HOST        kathleen)
