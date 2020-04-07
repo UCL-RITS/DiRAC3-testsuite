@@ -1,8 +1,8 @@
 # Build Grid Benchmark
 ExternalProject_Add(grid-benchmark
   DOWNLOAD_DIR ${CMAKE_BINARY_DIR}
-  GIT_REPOSITORY git@github.com:paboyle/Grid
-  GIT_TAG develop
+  GIT_REPOSITORY https://github.com/paboyle/Grid.git
+  GIT_TAG df6c9f55d1af1c40607087f241c2a98edf021075
   SOURCE_DIR ${CMAKE_BINARY_DIR}/grid-benchmark
   BUILD_IN_SOURCE 1
 	CONFIGURE_COMMAND aclocal -I m4
@@ -10,6 +10,7 @@ ExternalProject_Add(grid-benchmark
     && automake -f --add-missing
     && autoconf -f
 		&& sed -i "s/prerequisites lib benchmarks tests/prerequisites lib benchmarks/g" Makefile.am
+		&& sed -i "s|Config.h||g" lib/Makefile.am
 		&& mkdir -p builds/dirac3testsuite
 		&& cd builds/dirac3testsuite
 		&& CXX=${CMAKE_CXX_COMPILER} CC=${CMAKE_C_COMPILER} ../../configure --enable-precision=single --enable-simd=AVX "CXXFLAGS=${OpenMP_CXX_FLAGS} -mavx -O3 -std=c++11" "LIBS=${OpenMP_CXX_FLAGS} -lgmp -lmpfr" --enable-comms=mpi --prefix=${CMAKE_SOURCE_DIR}

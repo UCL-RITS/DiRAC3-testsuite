@@ -1,7 +1,7 @@
 # Swift Benchmark
 ExternalProject_Add(swiftsim-benchmark
   DOWNLOAD_DIR ${CMAKE_BINARY_DIR}
-  GIT_REPOSITORY git@github.com:DiRAC-benchmarks/swiftsim-benchmark.git
+  GIT_REPOSITORY https://github.com/DiRAC-benchmarks/swiftsim-benchmark.git
   GIT_TAG benchmark
   SOURCE_DIR ${CMAKE_BINARY_DIR}/swiftsim-benchmark
   BUILD_IN_SOURCE 1
