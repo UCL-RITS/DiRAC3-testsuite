@@ -9,3 +9,8 @@ set(HOST_CPUS_PER_NODE       40)
 set(HOST_THREADS_PER_CPU      2)
 set(HOST_COMPILER_ID      intel)
 set(HOST_SUBMIT_COMMAND    qsub)
+
+# Find MPI library but use gerun for parallel jobs
+find_program(MPIEXEC gerun)
+set(MPIEXEC_NUMPROC_FLAG -np)
+set(MPIEXEC_PREFLAGS "")

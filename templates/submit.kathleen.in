@@ -2,7 +2,7 @@
 
 #$ -N ${DIRAC3_JOB_NAME}
 #$ -l h_rt=00:10:00
-#$ -pe mpi 40
+#$ -pe mpi ${DIRAC3_JOB_CPUS}
 
 # Load modules
 source ${DIRAC3_MODULE_FILE}
